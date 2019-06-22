@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Lis
     private ProgressBar loadingBar;
 
     private int userId = 0;
+    private static final String TOKEN = "03680798dc0e63376006827923eb3f7d9cc75798";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Lis
 
         GitHubService service = ((GitHubApplication) getApplication()).getGitHubService();
         presenter = new MainPresenter(service, this);
-        presenter.loadUsers(userId);
+        presenter.loadUsers(userId, TOKEN);
         loadingBar.setVisibility(View.VISIBLE);
     }
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Lis
         adapter.setOnReachEndListener(position -> {
             loadingBar.setVisibility(View.VISIBLE);
             userId = users.get(position).getId();
-            presenter.loadUsers(userId);
+            presenter.loadUsers(userId, TOKEN);
         });
     }
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Lis
     }
 
     public void onClickRetry(View view) {
-        presenter.loadUsers(userId);
+        presenter.loadUsers(userId, TOKEN);
         buttonRetry.setVisibility(View.GONE);
         loadingBar.setVisibility(View.VISIBLE);
     }

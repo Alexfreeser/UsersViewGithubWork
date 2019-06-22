@@ -17,4 +17,5 @@
     <string name="created_at">Created at:</string>
     <string name="updated_at">Updated at:</string>
     <string name="retry">Retry</string>
+    <string name="no_data">Null</string>
 </resources>

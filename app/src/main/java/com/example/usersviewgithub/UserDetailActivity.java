@@ -73,12 +73,12 @@ public class UserDetailActivity extends AppCompatActivity implements DetailPrese
         if (userInfoList.getEmail() != null) {
             textViewEmail.setText(String.format("%s", userInfoList.getEmail()));
         } else {
-            textViewEmail.setText("Null");
+            textViewEmail.setText(R.string.no_data);
         }
         if (userInfoList.getBio() != null) {
             textViewBio.setText(String.format("%s", userInfoList.getBio()));
         } else {
-            textViewBio.setText("Null");
+            textViewBio.setText(R.string.no_data);
         }
         textViewRepos.setText(String.format("%s", userInfoList.getPublicRepos()));
         textViewGists.setText(String.format("%s", userInfoList.getPublicGists()));
@@ -86,7 +86,7 @@ public class UserDetailActivity extends AppCompatActivity implements DetailPrese
         textViewFollowing.setText(String.format("%s", userInfoList.getFollowing()));
         textViewCreated.setText(userInfoList.getCreatedAt());
         textViewUpdated.setText(userInfoList.getUpdatedAt());
-        Picasso.get().load(userInfoList.getAvatarUrl()).into(imageViewAvatar);
+        Picasso.get().load(userInfoList.getAvatarUrl()).placeholder(R.drawable.placeholder).into(imageViewAvatar);
     }
 
     @Override

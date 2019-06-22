@@ -27,8 +27,8 @@ public class MainPresenter {
         this.listener = listener;
     }
 
-    public void loadUsers(int userId) {
-        disposable = gitHubService.listUser(userId)
+    public void loadUsers(int userId, String token) {
+        disposable = gitHubService.listUser(userId, token)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(users -> listener.onUsersLoaded(users), error -> listener.onError(error.getMessage()));

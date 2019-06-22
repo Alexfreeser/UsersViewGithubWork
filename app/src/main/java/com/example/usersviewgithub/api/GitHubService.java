@@ -12,7 +12,9 @@ import retrofit2.http.Query;
 
 public interface GitHubService {
     @GET("users")
-    Single<List<User>> listUser(@Query("since") int userId);
+    Single<List<User>> listUser(
+            @Query("since") int userId,
+            @Query("access_token") String token);
 
     @GET("/users/{username}")
     Single<UserInfo> getUserInfo(@Path("username") String username);
