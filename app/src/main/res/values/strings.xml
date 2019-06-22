@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">UsersViewGithub</string>
+    <string name="user_label">Пользователь:</string>
+    <string name="avatar">avatar</string>
+    <string name="user_information">User information</string>
+    <string name="login">Login:</string>
+    <string name="id">id:</string>
+    <string name="name">Name:</string>
+    <string name="blog">Blog:</string>
+    <string name="location">Location:</string>
+    <string name="email">Email:</string>
+    <string name="biography">Biography:</string>
+    <string name="rublic_repos">Rublic Repos:</string>
+    <string name="public_gists">Public Gists:</string>
+    <string name="followers">Followers:</string>
+    <string name="following">Following</string>
+    <string name="created_at">Created at:</string>
+    <string name="updated_at">Updated at:</string>
+    <string name="retry">Retry</string>
+</resources>
